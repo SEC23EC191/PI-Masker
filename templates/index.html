@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PI Masking Tool</title>
+</head>
+<body>
+    <h2>Upload ID Document</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload and Mask">
+    </form>
+
+    {% if filename %}
+        <h3>Masked Output:</h3>
+        <img src="{{ url_for('static', filename='masked/' + filename) }}" alt="Masked Image">
+    {% endif %}
+</body>
+</html>
